@@ -7,6 +7,7 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
+  yield takeEvery('SET_DETAILS_PAGE', setupDetailsPage)
 }
 
 function* fetchAllMovies() {
@@ -20,6 +21,14 @@ function* fetchAllMovies() {
     });
   } catch (error) {
     console.log('fetchAllMovies error:', error);
+  }
+}
+
+function* setupDetailsPage(movieID) {
+  try {
+    yield console.log("id from Movie List click in store:", movieID);
+  } catch (error) {
+    console.log("setupDetailsPage error:", error);
   }
 }
 
@@ -45,6 +54,7 @@ const genres = (state = [], action) => {
       return state;
   }
 }
+
 
 // Create one store that all components can use
 const storeInstance = createStore(

@@ -12,9 +12,13 @@ function MovieList() {
     dispatch({ type: 'FETCH_MOVIES' });
   }, []);
 
+  //this function is triggered when a movie title is clicked
   const goToDetails = (id) => {
     console.log("in go to details function");
     console.log("this is the id of the movie:", id);
+    dispatch({ type: 'SET_DETAILS_PAGE',
+              payload: {movieId: id}})
+
   }
 
   return (
