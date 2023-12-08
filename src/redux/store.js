@@ -3,6 +3,7 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
+import { Dispatch } from 'react';
 
 // Create the rootSaga generator function
 function* rootSaga() {
@@ -24,9 +25,13 @@ function* fetchAllMovies() {
   }
 }
 
+//this saga is called when a movie title is clicked
 function* setupDetailsPage(movieID) {
   try {
-    yield console.log("id from Movie List click in store:", movieID);
+    yield put({
+      type: 'SET_DETAILS_PAGE_MOVIE_ID',
+      payload: movieID
+    })
   } catch (error) {
     console.log("setupDetailsPage error:", error);
   }
@@ -55,12 +60,23 @@ const genres = (state = [], action) => {
   }
 }
 
+//setting a redux state for the movie details
+const detailsPageMovieID = (state=0, action) => {
+  switch (action.type) {
+    case 'SET_DETAILS_PAGE_MOVIE_ID':
+      console.log("this is from row 66 of store", action.payload);
+      return action.payload;
+    default:
+      return state;
+  }
+}
 
 // Create one store that all components can use
 const storeInstance = createStore(
   combineReducers({
     movies,
     genres,
+    detailsPageMovieID
   }),
   // Add sagaMiddleware to our store
   applyMiddleware(sagaMiddleware, logger),
