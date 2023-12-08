@@ -12,6 +12,11 @@ function MovieList() {
     dispatch({ type: 'FETCH_MOVIES' });
   }, []);
 
+  const goToDetails = (id) => {
+    console.log("in go to details function");
+    console.log("this is the id of the movie:", id);
+  }
+
   return (
     <main>
       <h1>MovieList</h1>
@@ -20,7 +25,7 @@ function MovieList() {
           return (
             <div data-testid='movieItem' key={movie.id}>
               <h3>{movie.title}</h3>
-              <img src={movie.poster} alt={movie.title}/>
+              <img onClick={() => goToDetails(movie.id)} src={movie.poster} alt={movie.title}/>
             </div>
           );
         })}
