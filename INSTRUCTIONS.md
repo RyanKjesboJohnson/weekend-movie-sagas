@@ -8,17 +8,17 @@ We'll need to be able to see a detailed view for each individual movie, includin
 
 ## Database Setup
 
-1. Create a database named `saga_movies_weekend`
-2. Run the queries from `database.sql` on the `saga_movies_weekend` database
+1. Create a database named `saga_movies_weekend` - Complete
+2. Run the queries from `database.sql` on the `saga_movies_weekend` database - Complete
 
 ## Get Everything Up and Running
 
-1. `npm install`
-2. `npm run test` to verify that the Cypress tests run.
+1. `npm install` - Complete
+2. `npm run test` to verify that the Cypress tests run. -Complete
     - One test (`✓ E2E: Loads Movies Correctly`) should pass, while three other tests should fail.
     - Be sure to let us know immediately if this doesn't work.
-3. `npm run server` to run the server on port 5001.
-4. `npm run client` to run the React app on port 3000.
+3. `npm run server` to run the server on port 5001. -Complete
+4. `npm run client` to run the React app on port 3000. - Complete
 
 ## Notes
 
