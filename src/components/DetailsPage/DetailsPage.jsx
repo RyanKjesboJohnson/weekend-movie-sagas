@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 //This is the overarching page for the details.
 //This page will getDetails for the passed in movie id.
@@ -22,16 +22,23 @@ export default function DetailsPage() {
 
     }
 
+    const history = useHistory()
+    const returnToHome = () => {
+        history.push('/')
+    }
+
     return(
-        <div>
+        <div data-testid="movieDetails">
             {moviesArray.filter(movie => movie.id===currentMovieID).map(filteredMovie => (
                 <span key={filteredMovie.id}>
                 <div>{filteredMovie.title}</div>
                 <div>{filteredMovie.description}</div>
                 <img src={filteredMovie.poster}/>
-
                 </span>
             ))}
+            <div>
+            <button data-testid="toList" onClick={returnToHome} >Back to Movie List</button>
+            </div>
         </div>
     );
 
