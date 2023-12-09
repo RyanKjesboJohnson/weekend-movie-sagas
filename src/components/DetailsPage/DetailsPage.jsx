@@ -9,19 +9,29 @@ export default function DetailsPage() {
     const dispatch = useDispatch();
     
 //This is the useEffect and function that runs when the page starts up
-    const currentMovieID = useSelector((store) => store.detailsPageMovieID);
+    const currentMovieID = useSelector((store) => store.detailsPageMovieID.payload.movieId);
+    const moviesArray = useSelector((store) => store.movies);
+
     useEffect(() => {
         setupDetailsPage();
         }, []);
     const setupDetailsPage = () => {
         console.log("in setupDetailsPage function");
         // console.log("this is the id received for movie in the details page:", currentMovieID);
+        console.log(currentMovieID);
 
     }
 
     return(
         <div>
-            All the details will go here!
+            {moviesArray.filter(movie => movie.id===currentMovieID).map(filteredMovie => (
+                <span key={filteredMovie.id}>
+                <div>{filteredMovie.title}</div>
+                <div>{filteredMovie.description}</div>
+                <img src={filteredMovie.poster}/>
+
+                </span>
+            ))}
         </div>
     );
 

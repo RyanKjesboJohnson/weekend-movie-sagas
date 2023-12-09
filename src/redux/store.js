@@ -20,6 +20,7 @@ function* fetchAllMovies() {
       type: 'SET_MOVIES',
       payload: moviesResponse.data
     });
+    console.log(moviesResponse.data);
   } catch (error) {
     console.log('fetchAllMovies error:', error);
   }
