@@ -1,3 +1,7 @@
-[] Check for necessary boilerplate in store and router files
-[] Check for necessary boilerplate in the App.jsx and MovieList.jsx files
-[] Create a DetailsPage.jsx page, add boilerplate, and import into the app.jsx
+Completed base mode and passed the tests
+Here is my to do list for what to do next:
+[]Add additional comments to code
+[]Format the home page
+[]Format the details page
+[]Create an add movie page
+[]Complete the README doc

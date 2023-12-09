@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './MovieList.css'
 import DetailsPage from '../DetailsPage/DetailsPage';
+import { Box, Card, CardContent, Typography } from '@mui/material';
+import useTheme from '@mui/material';
 
 function MovieList() {
 
@@ -24,19 +26,21 @@ function MovieList() {
   }
 
   return (
-    <main>
-      <h1>MovieList</h1>
-      <section className="movies">
+    <Box>
+      <Typography variant='h4'>Select a movie to see more details:</Typography>
+      <Box className="movies">
         {movies.map(movie => {
           return (
-            <div data-testid='movieItem' key={movie.id}>
-              <h3>{movie.title}</h3>
+            <Card sx={{ minWidth: 150, m:5}}>
+            <CardContent data-testid='movieItem' key={movie.id}>
+              <Typography variant="h6">{movie.title}</Typography>
               <img data-testid="toDetails" onClick={() => goToDetails(movie.id)} src={movie.poster} alt={movie.title}/>
-            </div>
+            </CardContent>
+            </Card>
           );
         })}
-      </section>
-    </main>
+      </Box>
+    </Box>
 
   );
 }
