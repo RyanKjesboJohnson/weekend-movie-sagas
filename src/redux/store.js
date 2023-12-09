@@ -3,8 +3,6 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
-import { Dispatch } from 'react';
-import { useSelector } from 'react-redux';
 
 // Create the rootSaga generator function
 function* rootSaga() {
@@ -12,6 +10,7 @@ function* rootSaga() {
   yield takeEvery('SET_DETAILS_PAGE', setupDetailsPage);
 }
 
+//This saga function gets all movies
 function* fetchAllMovies() {
   try {
     // Get the movies:

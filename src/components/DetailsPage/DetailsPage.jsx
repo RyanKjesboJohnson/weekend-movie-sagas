@@ -27,6 +27,8 @@ export default function DetailsPage() {
         history.push('/')
     }
 
+    const movieGenresArray = useSelector((store) => store.movieDetails)
+    console.log(movieGenresArray[0]);
     return(
         <div data-testid="movieDetails">
             {moviesArray.filter(movie => movie.id===currentMovieID).map(filteredMovie => (
@@ -36,6 +38,12 @@ export default function DetailsPage() {
                 <img src={filteredMovie.poster}/>
                 </span>
             ))}
+            <h2>Genres:</h2>
+            <ul>
+            {movieGenresArray[0].map(genre => (
+                <li>{genre.name}</li>
+                ))}
+            </ul>
             <div>
             <button data-testid="toList" onClick={returnToHome} >Back to Movie List</button>
             </div>
