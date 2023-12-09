@@ -59,7 +59,7 @@ It is also worth noting that some of the pre-existing code will only be necessar
 
 ### Details Page
 
-- [ ] This view should show all details **including ALL the genres** for the selected movie, as well as the title, description, and poster image. Use Sagas and Redux to handle these requests and data. 
+- [X] This view should show all details **including ALL the genres** for the selected movie, as well as the title, description, and poster image. Use Sagas and Redux to handle these requests and data. 
 
 - [X] The details page must have a `data-testid="movieDetails"` attribute.
 
