@@ -7,7 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import BasicMenu from '../BasicMenu/BasicMenu';
+import { Button } from '@mui/material';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function SearchAppBar() {
 const Search = styled('div')(({ theme }) => ({
@@ -52,19 +53,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <BasicMenu />
-          </IconButton>
+        {/* <Button sx={{m:3}} variant="outlined" color="primary" size="large" onClick={navigateToCreatePage}>
+            Create Movie
+        </Button> */}
           <Typography
             variant="h4"
             noWrap

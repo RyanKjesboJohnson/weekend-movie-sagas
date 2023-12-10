@@ -8,6 +8,8 @@ import axios from 'axios';
 function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
   yield takeEvery('SET_DETAILS_PAGE', setupDetailsPage);
+  yield takeEvery('CREATE_NEW_MOVIE', addNewMovie);
+
 }
 
 //This saga function gets all movies
@@ -44,6 +46,19 @@ function* setupDetailsPage(movieID) {
     })
   } catch (error) {
     console.log("setupDetailsPage error:", error);
+  }
+}
+
+function* addNewMovie(action) {
+  try {
+    yield console.log("received a new movie request with the object:", action.payload);
+    yield axios({
+      method: 'POST',
+      url: '/api/movies',
+      data: action.payload
+    })
+  } catch (error) {
+    console.log("addNewMovie error:", error);
   }
 }
 
