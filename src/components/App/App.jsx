@@ -7,15 +7,14 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Box, Container, CssBaseline, Typography } from '@mui/material';
-
+import SearchAppBar from '../AppBar/AppBar';
 
 function App() {
   return (
+    
     <Container className="App">
       <CssBaseline>
-        <Box>
-          <Typography variant='h1' >The Movies Saga!</Typography>
-        </Box>
+        <SearchAppBar />
         <Router>        
           <Route path="/" exact>
             <MovieList />

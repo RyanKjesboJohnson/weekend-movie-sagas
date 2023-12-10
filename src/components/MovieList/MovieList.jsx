@@ -6,6 +6,7 @@ import DetailsPage from '../DetailsPage/DetailsPage';
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import useTheme from '@mui/material';
 
+
 function MovieList() {
 
   const dispatch = useDispatch();
