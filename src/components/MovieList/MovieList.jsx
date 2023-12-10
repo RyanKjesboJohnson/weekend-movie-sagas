@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './MovieList.css'
 import DetailsPage from '../DetailsPage/DetailsPage';
 import { Box, Card, CardContent, Typography } from '@mui/material';
-import useTheme from '@mui/material';
 
 
 function MovieList() {
@@ -32,8 +31,8 @@ function MovieList() {
       <Box className="movies">
         {movies.map(movie => {
           return (
-            <Card sx={{ minWidth: 150, m:5}}>
-            <CardContent data-testid='movieItem' key={movie.id}>
+            <Card key={movie.id} sx={{ minWidth: 150, m:5}}>
+            <CardContent data-testid='movieItem'>
               <Typography variant="h6">{movie.title}</Typography>
               <img data-testid="toDetails" onClick={() => goToDetails(movie.id)} src={movie.poster} alt={movie.title}/>
             </CardContent>
