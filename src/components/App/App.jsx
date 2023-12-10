@@ -8,6 +8,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Box, Container, CssBaseline, Typography } from '@mui/material';
 import SearchAppBar from '../AppBar/AppBar';
+import AddMoviePage from '../AddMoviePage/AddMoviePage';
 
 function App() {
   return (
@@ -22,9 +23,9 @@ function App() {
           <Route path="/details" exact>
             <DetailsPage />
           </Route>
-
-          {/* Add Movie page */}
-          
+          <Route path="/addmovie" exact>
+            <AddMoviePage />
+          </Route>          
         </Router>
       </CssBaseline>
     </Container>
