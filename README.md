@@ -14,4 +14,32 @@ Clicking on the poster of the main page will take you to the details of that mov
 ### Add New Movie Page
 The add a new movie page allows the user to add a new movie to the application and the relevant database files.  The user will be prompted to enter a movie title, movie poster URL, movie description, and to select one of the applicable movie genres.  After the user has entered the applicable information they can click on either 'save' or 'cancel' at the bottom of the screen.  Pressing 'cancel' will not save the information and will return the user to the main page.
 
+## Screenshots
+![2023-12-10 19 29 39](https://github.com/RyanKjesboJohnson/weekend-movie-sagas/assets/137465822/9993e5a6-79d2-4ecc-806e-71bae5cb15c6)
+![2023-12-10 19 31 18](https://github.com/RyanKjesboJohnson/weekend-movie-sagas/assets/137465822/5281e49b-7fd4-428b-8486-1766e87b74af)
+
+## Prerequisites
+The software needed to run this program includes:
+-Node.js
+-React
+-React Router
+-React Redux
+-React Saga
+-Redux Logger
+-Material UI
+-Axios
+-PG
+
+## Installation
+1. Create a database named `saga_movies_weekend`
+2. Run the queries from `database.sql` on the `saga_movies_weekend`
+3. `npm Install`
+4. `npm run server`
+5. `npm run client`
+
+## Usage
+The weekend movie saga application is used to keep track of movies and their relevant details.  Users can easily see all displayed movies on the movie list screen.  Users can then view details about a movie by clicking on a movie image.  Finally, users can add additional movies to their app on the new movie page.
+
+## Acknowledgement
+Thank you to the staff and fellow students at Prime Digital Academy.  Thank you to my wife who did more around the house while I worked on this project.
 
