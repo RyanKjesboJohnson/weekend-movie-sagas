@@ -39,6 +39,10 @@ export default function DetailsPage() {
     history.push("/");
   };
 
+  const addNewMovieButton = () => {
+    history.push('/addmovie')
+  }
+
   //The below UI leverages MUI.  
   //Particularly the features of Grid to orientate in columns.
   //Stack to stack items vertically.
@@ -77,6 +81,9 @@ export default function DetailsPage() {
                 </Box>
             <Button variant="outlined" color="secondary" size="large" data-testid="toList" onClick={returnToHome}>
                 Back to Movie List
+            </Button>
+            <Button sx={{m:3}} variant="outlined" color="primary" size="large" onClick={addNewMovieButton}>
+                Add New Movie
             </Button>
             </Stack>
         </Grid>

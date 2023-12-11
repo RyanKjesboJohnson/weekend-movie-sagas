@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './MovieList.css'
 import DetailsPage from '../DetailsPage/DetailsPage';
-import { Box, Card, CardContent, Typography } from '@mui/material';
+import { Box, Card, CardContent, Typography, Button } from '@mui/material';
 
 
 function MovieList() {
@@ -25,9 +25,16 @@ function MovieList() {
     history.push('/details')
   }
 
+  const navigateToCreatePage = () => {
+      history.push('/addmovie')
+  }
+
   return (
     <Box>
       <Typography variant='h4'>Select a movie to see more details:</Typography>
+      <Button sx={{m:3}} variant="outlined" color="primary" size="large" onClick={navigateToCreatePage}>
+            Create Movie
+        </Button>
       <Box className="movies">
         {movies.map(movie => {
           return (
