@@ -2,20 +2,19 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './MovieList.css'
-import DetailsPage from '../DetailsPage/DetailsPage';
 import { Box, Card, CardContent, Typography, Button } from '@mui/material';
 
 
 function MovieList() {
-
   const dispatch = useDispatch();
   const movies = useSelector(store => store.movies);
+  const history = useHistory();
 
+  //this requests the movies when the page loads
   useEffect(() => {
     dispatch({ type: 'FETCH_MOVIES' });
   }, []);
 
-  const history = useHistory();
   //this function is triggered when a movie title is clicked
   const goToDetails = (id) => {
     console.log("in go to details function");
@@ -25,6 +24,8 @@ function MovieList() {
     history.push('/details')
   }
 
+  //this function is triggered when the add movie button is clicked
+  //it navigates the use to the add move page
   const navigateToCreatePage = () => {
       history.push('/addmovie')
   }

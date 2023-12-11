@@ -49,6 +49,8 @@ function* setupDetailsPage(movieID) {
   }
 }
 
+//this saga is called when a new movie is added
+//this sends an axios to the router to trigger an add to the DB
 function* addNewMovie(action) {
   try {
     yield console.log("received a new movie request with the object:", action.payload);
@@ -74,6 +76,8 @@ const movies = (state = [], action) => {
       return state;
   }
 }
+
+//This stores the current movie details of the selected movie
 const movieDetails = (state = [], action) => {
   switch (action.type) {
     case 'SET_MOVIE_DETAILS':
@@ -84,7 +88,6 @@ const movieDetails = (state = [], action) => {
       return state;
   }
 }
-
 
 // Used to store the movie genres
 const genres = (state = [], action) => {

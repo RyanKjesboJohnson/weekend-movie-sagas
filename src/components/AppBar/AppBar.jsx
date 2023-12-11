@@ -3,13 +3,11 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { Button } from '@mui/material';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
+//This was added to create the top app bar of the page
 export default function SearchAppBar() {
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -69,15 +67,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
           >
             The Movies Saga
           </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
         </Toolbar>
       </AppBar>
     </Box>

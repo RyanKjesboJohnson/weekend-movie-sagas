@@ -1,16 +1,18 @@
-import { Box, Stack, Typography, Select, MenuItem, TextField, FormControl, InputLabel, FilledInput, Grid, Button } from "@mui/material";
+import { Box, Stack, Select, MenuItem, TextField, FormControl, InputLabel, FilledInput, Grid, Button } from "@mui/material";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function AddMoviePage(){
     const dispatch = useDispatch();
+    
+    //These represent the local state for the new movie
     const [newMovieTitle, setNewMovieTitle] = useState('')
     const [newMovieDescription, setNewMovieDescription] = useState('')
     const [newMovieURL, setNewMovieURL] = useState('')
     const [newMovieGenreID, setNewMovieGenreID] = useState(0)
 
-
+    //These populate the local state
     const populateNewTitle = (event) => {
         setNewMovieTitle(event.target.value)
     }
@@ -24,12 +26,15 @@ export default function AddMoviePage(){
         setNewMovieGenreID(event.target.value)
     }
 
+    //This creates the new movie object to be sent to the store
     const newMovieObject = {
         title: newMovieTitle,
         poster: newMovieURL,
         description: newMovieDescription,
         genre_id: newMovieGenreID
     }
+
+    //This function sends a new movie to the store
     const postNewMovie = () => {
         console.log(newMovieObject);
         dispatch({
@@ -39,6 +44,7 @@ export default function AddMoviePage(){
         history.push('/')
     }
 
+    //This function navigates the user back to the title page
     const history = useHistory();
     const returnToTitlePage = () => {
         history.push('/')
@@ -122,10 +128,10 @@ export default function AddMoviePage(){
     </Grid>
     <Box>
         <Button onClick={postNewMovie}>
-            Submit New Movie
+            Save
         </Button>
         <Button onClick={returnToTitlePage}>
-            Return to Title Page
+            Cancel
         </Button>
     </Box>
     </Stack>
