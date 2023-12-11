@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, TextField, FormControl, InputLabel, FilledInput, Grid, Button } from "@mui/material";
+import { Box, Stack, Typography, Select, MenuItem, TextField, FormControl, InputLabel, FilledInput, Grid, Button } from "@mui/material";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
@@ -93,24 +93,31 @@ export default function AddMoviePage(){
         </Grid>
         <Grid>
         <Box>
-        <select
-        name="genre"
-        onChange={() => populateNewGenre_ID(event)}
-      >
-        <option value={1}>Adventure</option>
-        <option value={2}>Animated</option>
-        <option value={3}>Biographical</option>
-        <option value={4}>Comedy</option>
-        <option value={5}>Disaster</option>
-        <option value={6}>Drama</option>
-        <option value={7}>Epic</option>
-        <option value={8}>Fantasy</option>
-        <option value={9}>Musical</option>
-        <option value={10}>Romantic</option>
-        <option value={11}>Science Fiction</option>
-        <option value={12}>Space-Opera</option>
-        <option value={13}>Superhero</option>
-      </select>
+        <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Movie Genre</InputLabel>
+            <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={newMovieGenreID}
+                label="Movie Genre"
+                onChange={() => populateNewGenre_ID(event)}                >
+                    <MenuItem value={1}>Adventure</MenuItem>
+                    <MenuItem value={2}>Animated</MenuItem>
+                    <MenuItem value={3}>Biographical</MenuItem>
+                    <MenuItem value={4}>Comedy</MenuItem>
+                    <MenuItem value={5}>Disaster</MenuItem>
+                    <MenuItem value={6}>Drama</MenuItem>
+                    <MenuItem value={7}>Epic</MenuItem>
+                    <MenuItem value={8}>Fantasy</MenuItem>
+                    <MenuItem value={9}>Musical</MenuItem>
+                    <MenuItem value={10}>Romantic</MenuItem>
+                    <MenuItem value={11}>Science Fiction</MenuItem>
+                    <MenuItem value={12}>Space-Opera</MenuItem>
+                    <MenuItem value={13}>Superhero</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
     </Box>
     </Grid>
     <Box>
